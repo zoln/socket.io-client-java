@@ -49,17 +49,22 @@ final public class IOParser implements Parser {
                 str.append(obj.attachments);
                 str.append("-");
             }
-
-            if (obj.nsp != null && obj.nsp.length() != 0 && !"/".equals(obj.nsp)) {
+            boolean nsp = obj.nsp != null && obj.nsp.length() != 0 && !"/".equals(obj.nsp);
+            if (nsp) {
                 str.append(obj.nsp);
-                str.append(",");
             }
 
             if (obj.id >= 0) {
+                if (nsp) {
+                    str.append(",");
+                }
                 str.append(obj.id);
             }
 
             if (obj.data != null) {
+                if (!nsp) {
+                    str.append(",");
+                }
                 str.append(obj.data);
             }
 
