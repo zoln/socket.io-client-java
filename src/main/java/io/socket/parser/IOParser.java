@@ -57,12 +57,13 @@ final public class IOParser implements Parser {
             if (obj.id >= 0) {
                 if (nsp) {
                     str.append(",");
+                    nsp = false;
                 }
                 str.append(obj.id);
             }
 
             if (obj.data != null) {
-                if (!nsp) {
+                if (nsp) {
                     str.append(",");
                 }
                 str.append(obj.data);
