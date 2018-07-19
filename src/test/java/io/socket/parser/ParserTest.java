@@ -52,7 +52,7 @@ public class ParserTest {
         // Random string
         Helpers.testDecodeError("asdf");
         // Unknown type
-        Helpers.testDecodeError(Parser.types.length + "asdf");
+        Helpers.testDecodeError(Parser.TYPES.length + "asdf");
         // Binary event with no `-`
         Helpers.testDecodeError(Parser.BINARY_EVENT + "asdf");
         // Binary ack with no `-`
